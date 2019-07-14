@@ -1,21 +1,10 @@
 # todo-list
 
-> A Vue.js project
+> 一个基于 vue + Element 开发的四象限任务列表，使用了localStorage存储数据。
 
-## Build Setup
+## 在线demo
 
-``` bash
-# install dependencies
-npm install
+https://ethan-jx.github.io/Todo-List/
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 截图
+![todo-list](https://raw.githubusercontent.com/Ethan-JX/Todo-List/master/photo/todo-list.jpg)

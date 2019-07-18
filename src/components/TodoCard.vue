@@ -6,8 +6,10 @@
         <el-button style="float: right; padding: 5px" icon="el-icon-plus" circle @click="openAddDialog"></el-button>
       </div>
       <div class="cardContent">
-        <todoItem v-for="(todo, index) in allTodo[todoType].todoList" :key="index" :todo="todo"
-                  :index="index" :todoType="todoType"></todoItem>
+        <draggable class="list-group" :list="allTodo[todoType].todoList" group="task">
+          <todoItem v-for="(todo, index) in allTodo[todoType].todoList" :key="index" :todo="todo" :index="index"
+                    :todoType="todoType"></todoItem>
+        </draggable>
       </div>
     </div>
   </el-col>
@@ -18,10 +20,12 @@
   import {mapState} from 'vuex'
   import storageUtil from '../utils/storageUtil'
 
+  import Draggable from 'vuedraggable'
+
   export default {
     name: 'TodoCard',
-    components: {TodoItem},
-    data () {
+    components: {TodoItem, Draggable},
+    data() {
       return {
         task: this.$store.state.allTodo[this.todoType]
       }
@@ -35,13 +39,13 @@
     watch: {
       task: {
         deep: true,
-        handler (newValue, oldValue) {
+        handler(newValue, oldValue) {
           storageUtil.saveTodos(newValue.title, newValue.todoList)
         }
       }
     },
     methods: {
-      openAddDialog () {
+      openAddDialog() {
         this.$store.dispatch('openAddDialog', this.todoType)
       }
     }
@@ -68,5 +72,9 @@
     height: 350px;
     padding: 0;
     overflow-x: hidden;
+  }
+
+  .cardContainer .cardContent .list-group {
+    height: 350px;
   }
 </style>

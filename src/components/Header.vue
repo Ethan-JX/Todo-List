@@ -7,13 +7,13 @@
 <script>
   export default {
     name: 'Header',
-    data () {
+    data() {
       return {
         activeIndex: '1'
       }
     },
     methods: {
-      handleSelect (key, keyPath) {
+      handleSelect(key, keyPath) {
         // console.log(key, keyPath)
       }
     }

@@ -27,7 +27,7 @@
       todoType: String
     },
 
-    data () {
+    data() {
       return {
         visible: false,
         isShow: false,
@@ -36,11 +36,13 @@
     },
 
     methods: {
-      deleteTodo () {
+      deleteTodo() {
         this.visible = false
-        this.$store.dispatch('deleteTodo', this.todoType, this.index)
+        const todoType = this.todoType;
+        const index = this.index;
+        this.$store.dispatch('deleteTodo', {todoType, index})
       },
-      handleEnter (isEnter) {
+      handleEnter(isEnter) {
         if (isEnter) { // 进入
           this.isShow = true
           this.bgColor = this.$store.state.allTodo[this.todoType].hoverBackground

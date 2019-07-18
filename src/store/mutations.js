@@ -5,7 +5,7 @@ import {ADD_TODO, DELETE_ALL_TODO, DELETE_FINISHED_TODO, DELETE_TODO, OPEN_ADD_D
 
 export default {
 
-  [ADD_TODO] (state) {
+  [ADD_TODO](state) {
     // 封装一个todo对象
     let todo = {
       content: state.addTodoDialog.todoContent,
@@ -16,23 +16,23 @@ export default {
     state.addTodoDialog.visible = false
   },
 
-  [DELETE_TODO] (state, {todoType, index}) {
+  [DELETE_TODO](state, {todoType, index}) {
     state.allTodo[todoType].todoList.splice(index, 1)
   },
 
-  [OPEN_ADD_DIALOG] (state, {todoType}) {
+  [OPEN_ADD_DIALOG](state, {todoType}) {
     state.addTodoDialog.addTodoType = todoType
     state.addTodoDialog.visible = true
   },
 
-  [DELETE_FINISHED_TODO] (state) {
+  [DELETE_FINISHED_TODO](state) {
     state.allTodo.task1.todoList = state.allTodo.task1.todoList.filter(todo => !todo.finish)
     state.allTodo.task2.todoList = state.allTodo.task2.todoList.filter(todo => !todo.finish)
     state.allTodo.task3.todoList = state.allTodo.task3.todoList.filter(todo => !todo.finish)
     state.allTodo.task4.todoList = state.allTodo.task4.todoList.filter(todo => !todo.finish)
   },
 
-  [DELETE_ALL_TODO] (state) {
+  [DELETE_ALL_TODO](state) {
     state.allTodo.task1.todoList = []
     state.allTodo.task2.todoList = []
     state.allTodo.task3.todoList = []

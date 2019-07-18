@@ -46,7 +46,7 @@
       ...mapGetters(['allCount', 'finishCount']),
     },
     methods: {
-      deleteFinishedTodo () {
+      deleteFinishedTodo() {
         MessageBox.confirm('确定删除【已完成】的todo?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
@@ -64,7 +64,7 @@
           })
         })
       },
-      deleteAllTodo () {
+      deleteAllTodo() {
         MessageBox.confirm('确定删除【所有】的todo?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',

@@ -4,7 +4,7 @@
 export default {
 
   // 总数量
-  allCount (state) {
+  allCount(state) {
     return state.allTodo.task1.todoList.length
       + state.allTodo.task2.todoList.length
       + state.allTodo.task3.todoList.length
@@ -12,7 +12,7 @@ export default {
   },
 
   // 完成的数量
-  finishCount (state) {
+  finishCount(state) {
     return state.allTodo.task1.todoList.filter(todo => todo.finish).length
       + state.allTodo.task2.todoList.filter(todo => todo.finish).length
       + state.allTodo.task3.todoList.filter(todo => todo.finish).length

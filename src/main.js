@@ -22,6 +22,7 @@ import {
   Row,
   Select
 } from 'element-ui'
+import '../static/index.css'
 
 Vue.use(Container)
 Vue.use(Header)
@@ -41,8 +42,6 @@ Vue.use(Select)
 Vue.use(Option)
 Vue.use(Input)
 Vue.use(Badge)
-
-import '../static/index.css'
 
 new Vue({
   el: '#app',

@@ -31,7 +31,7 @@
       ...mapState(['addTodoDialog'])
     },
     methods: {
-      addTodo () {
+      addTodo() {
         // 得到输入的数据
         const inputTodo = this.addTodoDialog.todoContent.trim()
         // 检查合法性
